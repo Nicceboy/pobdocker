@@ -8,6 +8,7 @@ Or one might rather keep their host system clean and easily controllable.
 This repository contains Dockerfile and short instructions for using it straightforwardly.
 It hopefully works in any Linux distribution.
 Only Docker daemon is required.
+Currently only Wayland is tested.
 
 ## Usage
 
@@ -50,6 +51,9 @@ docker image rm ghcr.io/nicceboy/pobdocker
 
 Wayland users might have problems if UID of the current user is not 1000.
 Container image should be rebuild to match the UID of the current user to allow using the X11-unix socket for display to work.
+
+Pure X11 display server on host seems to currently work if the host network and TCP is used to share the server.
+This requires modification of the `pob` file to include Docker parameter `--net=host`.
 
 # Licence
 
