@@ -21,6 +21,7 @@ curl -sL https://raw.githubusercontent.com/Nicceboy/pobdocker/main/pob > pob && 
 ```
 On first time, it will prompt for installation of PoB.
 For making saved data to be persisted even if the image is removed, named volume is used.
+Make sure to install the software for its default location.
 
 On second run, the volume is detected and already installed binary is executed, and PoB can be used.
 
