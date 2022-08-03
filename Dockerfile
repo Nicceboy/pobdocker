@@ -33,12 +33,9 @@ ENV USER_GID=${USER_UID}
 ENV USER_NAME="pobuser"
 ENV USER_HOME="/home/${USER_NAME}"
 
-# User needs audio group for raw ALSA to work
 RUN groupadd --gid "${USER_GID}" "${USER_NAME}" && \
     useradd --shell /bin/bash --uid "${USER_UID}" --gid "${USER_GID}" \
-      --no-create-home --home-dir "${USER_HOME}" "${USER_NAME}" && \
-    mkdir -p /var/lib/dbus && \
-    dbus-uuidgen > /var/lib/dbus/machine-id 
+      --no-create-home --home-dir "${USER_HOME}" "${USER_NAME}"
 
 # DOWNLOAD POB
 WORKDIR /opt/

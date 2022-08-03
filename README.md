@@ -25,6 +25,11 @@ This happens when you run the usage script first time.
 
 On second run, the volume is detected and already installed binary is executed, and PoB can be used.
 
+# Troubleshooting
+
+Wayland users might have problems if UID of the current user is not 1000.
+Container image should be rebuild to match the UID of the current user to allow using the X11-unix socket for display to work.
+
 # Licence
 
 MIT

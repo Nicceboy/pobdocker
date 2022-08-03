@@ -19,6 +19,7 @@ fi
 
 # C:\users\pobuser\AppData\Roaming\Path of Building Community
 POB_DEFAULT_EXE="$USER_HOME/.wine/drive_c/users/pobuser/AppData/Roaming/Path of Building Community/Path of Building.exe"
+GDK_SCALE=2
 
 if [ -f "$POB_DEFAULT_EXE" ]
 then
