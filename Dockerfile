@@ -3,8 +3,6 @@ FROM archlinux:latest
 ENV GOSU_VERSION=1.14
 
 RUN sed -i '/^NoExtract/d' /etc/pacman.conf && \
-    pacman-key --init && pacman -Sy --noconfirm && \
-    pacman -Qqn --noconfirm | pacman -S --noconfirm - && \
     sed -i '$ a\[multilib]\nInclude = \/etc\/pacman.d\/mirrorlist' /etc/pacman.conf && \
     pacman -Syu --noconfirm && \
     pacman -S --noconfirm \

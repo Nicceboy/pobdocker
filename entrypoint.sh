@@ -19,7 +19,7 @@ fi
 
 # C:\users\pobuser\AppData\Roaming\Path of Building Community
 POB_DEFAULT_EXE="$USER_HOME/.wine/drive_c/users/pobuser/AppData/Roaming/Path of Building Community/Path of Building.exe"
-GDK_SCALE=2
+export GDK_SCALE=2
 
 if [ -f "$POB_DEFAULT_EXE" ]
 then
@@ -28,4 +28,5 @@ else
     # echo "Running PoB first time. Installing into the default volume. Follow the prompts and finally run the pob script again." &&
     # exec gosu "${USER_NAME}" /bin/bash "$@"
     exec gosu "${USER_NAME}" wine /opt/PathOfBuildingCommunity-Setup-*.exe
+
 fi

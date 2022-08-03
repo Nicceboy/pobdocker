@@ -1,7 +1,7 @@
 #!/bin/sh
 USER_NAME="pobuser"
 X_SOCKET_DIR="/tmp/.X11-unix/"
-POB_VOLUME="pathofbuildingtest"
+POB_VOLUME="pathofbuilding"
 
 if ! docker volume ls -q | grep --q ${POB_VOLUME}; then
 	docker volume create ${POB_VOLUME} 

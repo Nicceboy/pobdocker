@@ -12,18 +12,37 @@ Only Docker daemon is required.
 ## Usage
 
 Usage requires Docker image and a set of parameters for running the Docker container.
-You can download the image and run it first time with oneliner:
+Dockerimage contains all required runtime dependencies.
+You can download the image and run it first time with oneliner (See [script contents](https://github.com/Nicceboy/pobdocker/blob/main/pob).):
 
 ```console
-curl -sL | bash
+curl -sL https://raw.githubusercontent.com/Nicceboy/pobdocker/main/pob > pob && bash pob
+```
+On first time, it will prompt for installation of PoB .
+For making saved data to be persisted even if the image is removed, named volume is used.
+On second run, the volume is detected and already installed binary is executed, and PoB can be used.
+
+To install the script for making usable everywhere, for example just move it to `/usr/local/bin/
+The script was downloaded into current directory with the previous oneliner.
+
+```console
+sudo mv pob /usr/local/bin/
 ```
 
-Dockerimage contains all required runtime dependencies.
-For making saved data to be persisted even if the image is removed, named volume is used.
-By default, PoB and saved data has been installed into the `volume` named as `pathofbuilding`.
-This happens when you run the usage script first time.
+# Details
 
-On second run, the volume is detected and already installed binary is executed, and PoB can be used.
+By default, PoB and saved data has been installed into the `volume` named as `pathofbuilding`.
+
+You can remove the volume with:
+
+```console
+docker volume rm pathofbuilding
+```
+
+To remove the image:
+```console
+docker image rm ghcr.io/nicceboy/pobdocker
+```
 
 # Troubleshooting
 
