@@ -55,7 +55,7 @@ Wayland users might have problems if UID of the current user is not 1000.
 Container image should be rebuild to match the UID of the current user to allow using the X11-unix socket for display to work.
 
 Pure X11 display server on host seems to currently work if the host network and TCP is used to share the server.
-This requires modification of the `pob` file to include Docker parameter `--net=host`.
+This requires modification of the `pob` file to include Docker parameter `--net=host`; however, it might be unwanted if there are concerns about isolation.
 
 # Licence
 
