@@ -18,4 +18,4 @@ docker run --rm \
  	-v ${POB_VOLUME}:"/home/$USER_NAME" \
 	-v ~/.Xauthority:"/home/$USER_NAME/.Xkey:ro" \
 	-v "$X_SOCKET_DIR:$X_SOCKET_DIR:ro" \
-	pobdocker:latest
+	ghcr.io/nicceboy/pobdocker:main
