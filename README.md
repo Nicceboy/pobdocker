@@ -29,6 +29,8 @@ The script was downloaded into current directory with the previous oneliner.
 sudo mv pob /usr/local/bin/
 ```
 
+Then it can be used by running `pob`.
+
 # Details
 
 By default, PoB and saved data has been installed into the `volume` named as `pathofbuilding`.
