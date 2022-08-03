@@ -1,0 +1,21 @@
+#!/bin/sh
+USER_NAME="pobuser"
+X_SOCKET_DIR="/tmp/.X11-unix/"
+POB_VOLUME="pathofbuildingtest"
+
+if ! docker volume ls -q | grep --q ${POB_VOLUME}; then
+	docker volume create ${POB_VOLUME} 
+fi
+
+docker run --rm \
+    --detach \
+	--env DISPLAY \
+    --ipc=host \
+    --env WAYLAND_DISPLAY=${WAYLAND_DISPLAY} \
+	--env XDG_RUNTIME_DIR="/tmp" \
+	--env XDG_SESSION_TYPE="x11" \
+	--device /dev/dri:/dev/dri \
+ 	-v ${POB_VOLUME}:"/home/$USER_NAME" \
+	-v ~/.Xauthority:"/home/$USER_NAME/.Xkey:ro" \
+	-v "$X_SOCKET_DIR:$X_SOCKET_DIR:ro" \
+	pobdocker:latest
